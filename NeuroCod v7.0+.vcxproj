@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="Core\SystemScanner\SystemScanner.h" />
+    <ClInclude Include="Core\AIGenerator\AIGenerator.h" />
+    <ClInclude Include="Core\ResourceMonitor\ResourceMonitor.h" />
+    <ClInclude Include="UI\Localization.h" />
+    <ClInclude Include="Main.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Core\SystemScanner\SystemScanner.cpp" />
+    <ClCompile Include="Core\SystemScanner\HardwareDiagnostic.cpp" />
+    <ClCompile Include="Core\AIGenerator\CodeGenerator.cpp" />
+    <ClCompile Include="Core\AIGenerator\ImageGenerator.cpp" />
+    <ClCompile Include="Core\ResourceMonitor\ResourceMonitor.cpp" />
+    <ClCompile Include="UI\App.xaml.cpp" />
+    <ClCompile Include="UI\Localization.cpp" />
+    <ClCompile Include="UI\XAML\MainWindow.xaml.cpp" />
+    <ClCompile Include="UI\XAML\AIPanel.xaml.cpp" />
+    <ClCompile Include="UI\XAML\SettingsPage.xaml.cpp" />
+    <ClCompile Include="Main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="UI\App.xaml" />
+    <Page Include="UI\XAML\MainWindow.xaml" />
+    <Page Include="UI\XAML\AIPanel.xaml" />
+    <Page Include="UI\XAML\SettingsPage.xaml" />
+  </ItemGroup>
+  <PropertyGroup>
+    <WindowsTargetPlatformVersion>10.0.19041.0</WindowsTargetPlatformVersion>
+    <ConfigurationType>Application</ConfigurationType>
+    <LinkIncremental>true</LinkIncremental>
+    <!-- Явно указываем точку входа -->
+    <EntryPointSymbol>wWinMain</EntryPointSymbol>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EntryPointSymbol>wWinMain</EntryPointSymbol>
+    </Link>
+  </ItemDefinitionGroup>
+</Project>
